@@ -2,15 +2,14 @@
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
+              <b><a href="/" target="_blank">Becouif</a></b>
             </span>
           </div>
         </div>
 
         <div class="container my-auto py-2">
           <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - distributed by
-              <b><a href="https://themewagon.com/" target="_blank">themewagon</a></b>
+            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> 
             </span>
           </div>
         </div>
@@ -22,6 +21,13 @@
   <script src="{{asset('admin/js/ruang-admin.min.js')}}"></script>
   <script src="{{asset('admin/vendor/chart.js/Chart.min.js')}}"></script>
   <script src="{{asset('admin/js/demo/chart-area-demo.js')}}"></script>  
+  
+  <script type="text/javascript">
+    function confirmDelete(){
+      return confirm('Are you sure you want to delete?')
+    }
+
+  </script>
 </body>
 
 </html>
