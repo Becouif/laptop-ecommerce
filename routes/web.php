@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SubCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/index', function(){
     return view('admin.dashboard');
-});
+})->name('index');
 Route::group(['prefix'=>'category'], function(){
     Route::get('/',[CategoryController::class, 'index'])->name('category.index');
     Route::get('/create',[CategoryController::class, 'create'])->name('category.create');
@@ -29,6 +29,18 @@ Route::group(['prefix'=>'category'], function(){
     Route::put('/update/{id}',[CategoryController::class, 'update'])->name('category.update');
     Route::delete('/delete/{id}',[CategoryController::class, 'destroy'])->name('category.destroy');
 });
+
+Route::group(['prefix'=>'category/subcategory'], function(){
+    Route::get('/',[SubCategoryController::class, 'index'])->name('subcategory.index');
+    Route::get('/create',[SubCategoryController::class, 'create'])->name('subcategory.create');
+    Route::post('/store',[SubCategoryController::class, 'store'])->name('subcategory.store');
+    Route::get('/{id}/edit',[SubCategoryController::class, 'edit'])->name('subcategory.edit');
+    Route::put('/{id}/update',[SubCategoryController::class, 'update'])->name('subcategory.update');
+    Route::delete('/{id}/delete',[SubCategoryController::class, 'destroy'])->name('subcategory.destroy');
+
+
+});
+
 
 Auth::routes();
 
