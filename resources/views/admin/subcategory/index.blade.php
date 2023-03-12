@@ -1,7 +1,4 @@
-@extends('admin.layouts.main');
-@section('content')
 @extends('admin.layouts.main')
-
 @section('content')
 
 <div class="col-lg-12">
@@ -12,7 +9,7 @@
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                     @if (Session::has('message'))
-                      <p class="alert alert-success">{{Session::get('message')}}</p>
+                      <p class="alert alert-primary">{{Session::get('message')}}</p>
                     @endif
                     <thead class="thead-light">
                       <tr>
@@ -41,7 +38,7 @@
                       </tr>
                       @endforeach
                       @else
-                      <td><p>No Categories available</p></td>
+                      <td><p class="text-danger">No subcategories available</p></td>
                       
                       @endif
 
@@ -50,10 +47,6 @@
                 </div>
               </div>
             </div>
-
-
-@endsection
-
 
 
 @endsection

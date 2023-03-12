@@ -63,6 +63,15 @@ class SubCategoryController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $this->validate($request,[
+            'name'=>'required',
+            'category'=>'required'
+        ]);
+        $subcategory = SUbcategory::find($id);
+        $subcategory->name = $request->name;
+        $subcategory->category_id = $request->category;
+        $subcategory->save();
+        return redirect()->route('subcategory.index')->with('message','Subcategory updated successfully');
     }
 
     /**
@@ -70,6 +79,8 @@ class SubCategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $subcategory = Subcategory::find($id);
+        $subcategory->delete();
+        return redirect()->route('subcategory.index')->with('message','Subcategory deleted successfully');
     }
 }

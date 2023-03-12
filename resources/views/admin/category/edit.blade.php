@@ -8,7 +8,7 @@
       {{ method_field('PUT') }}
       <div class="card mb-10">
         @if (Session::has('message'))
-         <div class="alert alert-success">{{Session::get('message')}}</div>
+         <div class="alert alert-primary">{{Session::get('message')}}</div>
           
         @endif
         <div class="card-header">

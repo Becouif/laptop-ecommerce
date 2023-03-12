@@ -15,6 +15,7 @@
 <div class="row justify-content-center">
   <div class="col-lg-10">
     <form action="{{route('subcategory.update',[$subcategory->id])}}" enctype="multipart/form-data" method="post"> @csrf
+      {{ method_field('PUT') }}
       <div class="card mb-6">
         @if (Session::has('message'))
           <div class="alert alert-success">{{Session::get('message')}}</div>
@@ -38,9 +39,9 @@
             <div class="custom-file">
               <label class="" for="image">Choose Category</label>
               <select  class="form-control @error('category') is-invalid @enderror" name="category" id="category">
-                <option value="{{$subcategory->id}}">{{$subcategory->category->name}}</option>
               @foreach (App\Models\Category::all() as $category)
-              <option value="{{$category->id}}">{{$category->name}}</option>
+              <option value="{{$category->id}}" @if ($subcategory->category_id == $category->id) selected
+              @endif>{{$category->name}}</option>
               @endforeach
                 
               </select>

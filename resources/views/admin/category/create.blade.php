@@ -16,7 +16,7 @@
     <form action="{{route('category.store')}}" enctype="multipart/form-data" method="post"> @csrf
       <div class="card mb-6">
         @if (Session::has('message'))
-          <div class="alert alert-success">{{Session::get('message')}}</div>
+          <div class="alert alert-primary">{{Session::get('message')}}</div>
           
         @endif
         <div class="card-header">

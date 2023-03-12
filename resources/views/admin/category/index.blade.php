@@ -10,7 +10,7 @@
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                     @if (Session::has('message'))
-                      <p class="alert alert-success">{{Session::get('message')}}</p>
+                      <p class="alert alert-primary">{{Session::get('message')}}</p>
                     @endif
                     <thead class="thead-light">
                       <tr>
@@ -42,7 +42,7 @@
                       </tr>
                       @endforeach
                       @else
-                      <td><p>No Categories available</p></td>
+                      <td><p class="alert text-danger">No categories available</p></td>
                       
                       @endif
 

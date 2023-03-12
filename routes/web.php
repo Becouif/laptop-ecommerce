@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +40,10 @@ Route::group(['prefix'=>'category/subcategory'], function(){
     Route::delete('/{id}/delete',[SubCategoryController::class, 'destroy'])->name('subcategory.destroy');
 
 
+});
+Route::group(['prefix'=>'product'], function(){
+    Route::get('/create',[ProductController::class, 'create'])->name('product.create');
+    Route::post('/store',[ProductController::class, 'store'])->name('product.store');
 });
 
 
