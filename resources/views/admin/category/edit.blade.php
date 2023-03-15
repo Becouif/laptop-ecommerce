@@ -1,6 +1,13 @@
 @extends('admin.layouts.main')
 @section('content')
 
+<nav aria-label="breadcrumb">
+  <h1 class="h3 mb-0 ml-4 text-gray-800">Category</h1>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Category</li>
+  </ol>
+</nav>
 
 <div class="row justify-content-center">
   <div class="col-lg-10">

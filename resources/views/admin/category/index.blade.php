@@ -2,6 +2,15 @@
 
 @section('content')
 
+
+<nav aria-label="breadcrumb">
+  <h1 class="h3 mb-0 ml-4 text-gray-800">Category</h1>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Category</li>
+  </ol>
+</nav>
+
 <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
