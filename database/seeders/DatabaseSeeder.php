@@ -1,7 +1,10 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Category;
+use App\Models\Subcategory;
+use App\Models\Product;
+use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,11 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        User::create([
+            'name'=>'admin',
+            'email'=>'admin@gmail.com',
+            'password'=>bcrypt('password'),
+            'email_verified_at'=>NOW(),
+            'address'=>'ukraine',
+            'phone_number'=>'0731185943',
+            'is_admin'=>1
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+
+        ]);
     }
 }
